@@ -1,22 +1,4 @@
-/* Copyright 2015 LuizAugustoMorais
-*
-* This file is part of Tomato.
-*
-* Tomato is free software: you can redistribute it
-* and/or modify it under the terms of the GNU General Public License as
-* published by the Free Software Foundation, either version 3 of the
-* License, or (at your option) any later version.
-*
-* Tomato is distributed in the hope that it will be
-* useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
-* Public License for more details.
-*
-* You should have received a copy of the GNU General Public License along
-* with Tomato. If not, see http://www.gnu.org/licenses/.
-*/
-
-namespace Tomato.Window {
+namespace Maeto.Window {
 
     public class MainWindow : Gtk.Dialog {
 		private const string COLOR_PRIMARY = """
@@ -38,7 +20,7 @@ namespace Tomato.Window {
         public signal void skip_clicked ();
         public signal void closed ();
 
-        private TomatoApp app;
+        private MaetoApp app;
 
 		private Gtk.HeaderBar headerbar;
         private Gtk.MenuButton appmenu;
@@ -55,7 +37,7 @@ namespace Tomato.Window {
         private Gtk.Button skip;
 
         // constructor
-        public MainWindow (TomatoApp app) {
+        public MainWindow (MaetoApp app) {
 			Object (use_header_bar: 1);
 
             this.app = app;
@@ -69,7 +51,7 @@ namespace Tomato.Window {
 
             countdown_label = new Gtk.Label ("");
             total_time_label = new Gtk.Label ("");
-            start = new Gtk.Button.with_label (_("Start"));
+            start = new Gtk.Button.with_label (_("Begin"));
             resume = new Gtk.Button.with_label (_("Resume"));
             pause = new Gtk.Button.with_label (_("Pause"));
             stop = new Gtk.Button.with_label (_("Stop"));
@@ -166,7 +148,7 @@ namespace Tomato.Window {
         private void setup_headerbar () {
             appmenu = new Gtk.MenuButton ();
 
-            preferences = new Gtk.MenuItem.with_label (_("Preferences…"));
+            preferences = new Gtk.MenuItem.with_label (_("Settings…"));
             Gtk.Menu menu = new Gtk.Menu ();
 
             menu.append (preferences);
@@ -251,7 +233,7 @@ namespace Tomato.Window {
 						color_primary = "#8ea5af";
 						break;
 					case "pomodoro":
-						color_primary = "#df4b4b";
+						color_primary = "#e3d69d";
 						break;
 					case "break":
 						color_primary = "#05B560";

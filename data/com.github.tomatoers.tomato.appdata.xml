@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-  <id>com.github.tomatoers.tomato.desktop</id>
+  <id>com.github.et0and.maeto.desktop</id>
   <metadata_license>CC0</metadata_license>
-  <project_license>GPL-2</project_license>
-  <name>Tomato</name>
-  <summary>Keep focused on your work</summary>
+  <project_license>GPL-3</project_license>
+  <name>Maeto</name>
+  <summary>A pomodoro timer</summary>
 
   <description>
-    <p>Tomato is a clean, easy-to-use time manager based on Pomodoro technique. It breaks down work into intervals to keep you focused and allows you to rest during strategic periods to reward your progress. It is a must-have app if you need to avoid procrastination.</p>
+    <p>Maeto is a clean, easy-to-use time manager based on the Pomodoro technique</p>
   </description>
 
   <screenshots>
@@ -27,10 +27,10 @@
     </screenshot>
   </screenshots>
 
-  <developer_name>Tomatoers</developer_name>
-  <url type="homepage">https://github.com/tomatoers/tomato</url>
-  <url type="bugtracker">https://github.com/tomatoers/tomato/issues</url>
-  <url type="help">https://github.com/tomatoers/tomato/issues</url>
+  <developer_name>et0and</developer_name>
+  <url type="homepage">https://github.com/et0and/maeto</url>
+  <url type="bugtracker">https://github.com/et0and/maeto/issues</url>
+  <url type="help">https://github.com/et0and/maeto/issues</url>
   <update_contact>c@ssidyjam.es</update_contact>
 
   <custom>
@@ -39,7 +39,7 @@
   </custom>
 
   <provides>
-    <binary>com.github.tomatoers.tomato</binary>
+    <binary>com.github.et0and.maeto</binary>
   </provides>
 
   <releases>

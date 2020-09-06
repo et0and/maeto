@@ -1,22 +1,4 @@
-/* Copyright 2015 LuizAugustoMorais
-*
-* This file is part of Tomato.
-*
-* Tomato is free software: you can redistribute it
-* and/or modify it under the terms of the GNU General Public License as
-* published by the Free Software Foundation, either version 3 of the
-* License, or (at your option) any later version.
-*
-* Tomato is distributed in the hope that it will be
-* useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
-* Public License for more details.
-*
-* You should have received a copy of the GNU General Public License along
-* with Hello Again. If not, see http://www.gnu.org/licenses/.
-*/
-
-namespace Tomato.Services {
+namespace Maeto.Services {
 
     public class SavedState : Granite.Services.Settings {
         public string date {get; set;}
@@ -35,7 +17,7 @@ namespace Tomato.Services {
         }
 
         public SavedState () {
-            base ("com.github.tomatoers.tomato.saved");
+            base ("com.github.et0and.maeto.saved");
         }
     }
 
@@ -46,7 +28,7 @@ namespace Tomato.Services {
         public int long_break_delay {get; set;}
 
         public Settings () {
-            base ("com.github.tomatoers.tomato.settings");
+            base ("com.github.et0and.maeto.settings");
         }
     }
 
@@ -59,7 +41,7 @@ namespace Tomato.Services {
         public bool debug_mode {get; set;}
 
         public Preferences () {
-            base ("com.github.tomatoers.tomato.preferences");
+            base ("com.github.et0and.maeto.preferences");
         }
     }
 }

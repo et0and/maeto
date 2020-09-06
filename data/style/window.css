@@ -1,5 +1,4 @@
 @define-color colorPrimary #8ea5af;
-/*@define-color bg_highlight_color shade (@colorPrimary, 1.4);*/
 
 .main-window decoration {
     border-radius: 4px;
@@ -53,39 +52,3 @@
 frame {
     border: none;
 }
-
-/* .pomodoro-window { */
-/*     background-color: #f34b4b; */
-/*     border-color: darker(#f34b4b); */
-/* } */
-/* .pomodoro-button { */
-/*     padding: 5px; */
-/*     color: #ffffff; */
-/*     background-color: #df4b4b; */
-/*     border: 1px solid darker(#df4b4b); */
-/* } */
-
-/* .start-window { */
-/*     background-color: #8ea5af; */
-/*     border-color: darker(#8ea5af); */
-/* } */
-
-/* .start-button { */
-/*     padding: 5px; */
-/*     color: #ffffff; */
-/*     background-color: #7f949d; */
-/*     border: 1px solid darker(#7f949d); */
-/* } */
-
-
-/* .break-window { */
-/*     background-color: #05B560; */
-/*     border-color: darker(#05B560); */
-/* } */
-
-/* .break-button { */
-/*     padding: 5px; */
-/*     color: #ffffff; */
-/*     background-color: #04a256; */
-/*     border: 1px solid darker(#04a256); */
-/* } */

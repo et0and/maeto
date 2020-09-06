@@ -1,24 +1,24 @@
-/* Copyright 2015 LuizAugustoMorais
+/* Copyright 2020 Tom Hackshaw
 *
-* This file is part of Tomato.
+* This file is part of Maeto.
 *
-* Tomato is free software: you can redistribute it
+* Maeto is free software: you can redistribute it
 * and/or modify it under the terms of the GNU General Public License as
 * published by the Free Software Foundation, either version 3 of the
 * License, or (at your option) any later version.
 *
-* Tomato is distributed in the hope that it will be
+* Maeto is distributed in the hope that it will be
 * useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
 * Public License for more details.
 *
 * You should have received a copy of the GNU General Public License along
-* with Tomato. If not, see http://www.gnu.org/licenses/.
+* with Maeto. If not, see http://www.gnu.org/licenses/.
 */
 
 using Granite.Services;
 
-namespace Tomato {
+namespace Maeto {
 
     public enum Status {
         START,
@@ -32,10 +32,10 @@ namespace Tomato {
     public Services.Preferences preferences;
 
     protected int break_messages_index = 0;
-    protected const string[] break_messages = {N_("Go have a coffee"),
+    protected const string[] break_messages = {N_("Time for a hot tea!"),
                                         N_("Drink some water"),
-                                        N_("Get up and dance!"),
-                                        N_("Have a break, have a tomato"),
+                                        N_("Look outside your window for a second"),
+                                        N_("Break time!"),
                                         N_("Get up! Stand up! Fight for your fingers!"),
                                         N_("Take a break, save a life"),
                                         N_("Woot! Break time, baby!"),
@@ -52,28 +52,26 @@ namespace Tomato {
 
     //protected const bool DEBUG = true;
 
-    public class TomatoApp : Granite.Application {
+    public class MaetoApp : Granite.Application {
 
         construct {
             program_name = Constants.APP_NAME;
             exec_name = Constants.EXEC_NAME;
             build_version = Constants.VERSION;
 
-            app_years = "2017";
+            app_years = "2020";
             app_icon = Constants.ICON_NAME;
-            app_launcher = "com.github.tomatoers.tomato.desktop";
-            application_id = "com.github.tomatoers.tomato";
+            app_launcher = "com.github.et0and.maeto.desktop";
+            application_id = "com.github.et0and.maeto";
 
-            main_url = "https://github.com/tomatoers/tomato";
-            bug_url = "https://github.com/tomatoers/tomato/issues";
-            help_url = "https://github.com/tomatoers/tomato";
+            main_url = "https://github.com/et0and/maeto";
+            bug_url = "https://github.com/et0and/maeto/issues";
+            help_url = "https://github.com/et0and/maeto";
             translate_url = "https://www.transifex.com/tomato-translators/tomato/translate/";
 
-            about_authors = {"Luiz Augusto Morais <luizaugustomm@gmail.com>",
-                             "Sam Thomas <sgpthomas@gmail.com>"};
+            about_authors = {"Tom Hackshaw <tom@tomahckshaw.com>"};
             about_license_type = Gtk.License.GPL_3_0;
-            about_artists = {"Luiz Augusto Morais <luizaugustomm@gmail.com>",
-                             "Sam Thomas <sgpthomas@gmail.com>"};
+            about_artists = {"Tom Hackshaw <tom@tomhackshaw.com>"};
             about_translators = "Launchpad Translators";
         }
 
@@ -87,7 +85,7 @@ namespace Tomato {
         private uint stop_timeout_id = 0;
 
         //constructor
-        public TomatoApp () {
+        public MaetoApp () {
             //logger initialization
             Logger.initialize (Constants.APP_NAME);
             Logger.DisplayLevel = LogLevel.DEBUG;
@@ -97,7 +95,7 @@ namespace Tomato {
             settings = new Services.Settings ();
             preferences = new Services.Preferences ();
 
-            // Instantiating tomato managers
+            // Instantiating maeto managers
             work = new Managers.WorkManager ();
             notification = new Managers.NotificationManager ();
             launcher = new Managers.LauncherManager ();
@@ -110,7 +108,7 @@ namespace Tomato {
             Intl.textdomain (Constants.GETTEXT_PACKAGE);
 
             //set debug state
-            Tomato.preferences.debug_mode = false;
+            Maeto.preferences.debug_mode = false;
         }
 
         public override void activate () {
@@ -119,7 +117,7 @@ namespace Tomato {
                 connect_signals ();
                 Gtk.main ();
             } else {
-                message ("There is an instance of tomato already open.");
+                message ("There is an instance of maeto already running.");
                 window.present ();
             }
         }
@@ -148,7 +146,7 @@ namespace Tomato {
                 if (stop_countdown == -1) {
                     on_stop_clicked ();
                     stop_countdown = 14;
-                    notification.show (_("Pomodoro was interrupted"), _("Tomato was paused for a long time. You might have lost focus. Try a new pomodoro!"));
+                    notification.show (_("Pomodoro was interrupted"), _("Maeto had been paused for a long time. You might have lost focus. Try a new pomodoro!"));
                 }
             } return paused;
         }
@@ -311,7 +309,7 @@ namespace Tomato {
     public static void main(string[] args) {
         Gtk.init(ref args);
 
-        TomatoApp app = new TomatoApp ();
+        MaetoApp app = new MaetoApp ();
         app.run (args);
     }
 
