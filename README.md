@@ -1,14 +1,6 @@
-![Screenshot](data/screenshots/pomodoro.png?raw=true)
+maeto is a clean, easy-to-use time manager based on Pomodoro technique. It is a fork of the Tomato pomodoro app by [Tomatoers](https://github.com/tomatoers/tomato), with modifications to make it build and run on the latest version of elementary.
 
-## Keep focused on your work
-
-maeto is a clean, easy-to-use time manager based on Pomodoro technique. It breaks down work into intervals to keep you focused and allows you to rest during strategic periods to reward your progress. It is a must-have app if you need to avoid procrastination.
-
-## Made for [elementary OS](https://elementary.io)
-
-maeto is designed and developed on and for [elementary OS](https://elementary.io). However, any GNU/Linux distribution with GTK 3 and the required dependencies installed can run maeto.
-
-## Developing and Building
+maeto is designed and developed on and for [elementary OS](https://elementary.io). However, any GNU/Linux distribution with GTK 3 and the required dependencies installed can run maeto. Note: the app will be buggy and there are still things that need fixing as I have only begun a rudimentary port across to Hera - software considered alpha.
 
 If you want to hack on and build maeto yourself, you'll need the following dependencies:
 
@@ -31,9 +23,9 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr ../
 make
 ```
 
-To install, use `make install`, then execute with `com.github.tomatoers.tomato`
+To install, use `make install`, then execute with `com.github.et0and.maeto`
 
 ```shell
 sudo make install
-com.github.tomatoers.tomato
+com.github.et0and.maeto
 ```
